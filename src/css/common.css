@@ -1,0 +1,15 @@
+#debug-ui{
+    display: block;
+    border: 1px solid #333;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.pass{
+    color: green;
+}
+
+.fail{
+    color: red;
+    text-decoration: line-through;
+}
