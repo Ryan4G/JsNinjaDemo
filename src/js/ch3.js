@@ -68,3 +68,27 @@ function isPrime(value){
 
 assert(isPrime(5), "5 is prime!");
 assert(isPrime.answers[5], "the answer was cached!");
+
+var greet = name => "Greeting " + name;
+assert(greet("Oishi") === "Greeting Oishi", "Oishi is properly greeted");
+
+var anotherGreet = function(name){
+    return "Greeting " + name;
+};
+assert(anotherGreet("Oishi") === "Greeting Oishi", "Again, Oishi is properly greeted");
+
+function multiMax(first, ...remainingNumbers){
+    var sorted = remainingNumbers.sort((a, b) => {
+        return b - a;
+    });
+    return first * sorted[0];
+}
+assert(multiMax(3, 1, 2, 3, 4) == 12, "3 * 4 = 12 (First arg, by largest.)");
+
+function performAction(ninjia, action = "skulking"){
+    return ninjia + " " + action;
+}
+assert(performAction("Fuma") === "Fuma skulking", "The default value is used for Fuma");
+assert(performAction("Yoshi") === "Yoshi skulking", "The default value is used for Yoshi");
+assert(performAction("Hottori") === "Hottori skulking", "The default value is used for Hottori");
+assert(performAction("Yagyu", "sneaking") === "Yagyu sneaking", "Yagyu can do whatever he pleases, can sneak!");
