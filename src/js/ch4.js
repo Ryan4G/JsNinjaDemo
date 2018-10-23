@@ -72,3 +72,18 @@ ninja = new Ninja('Hattori');
 skulk.call(ninja, 'Hattori');
 // 通过apply方法调用
 skulk.apply(ninja, ['Hattori']);
+
+function ninja_func(){
+    return this;
+}
+
+function samurai(){
+    'use strict';
+    return this;
+}
+
+assert(ninja_func() === window, "In a 'nonstrict' ninja function, " + 
+"this context is the global window object");
+
+assert(samurai() === undefined, "In a 'strict' samurai function, " + 
+"this context is undefined");
