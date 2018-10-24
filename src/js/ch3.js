@@ -1,3 +1,6 @@
+chapter("3.1 函数式的不同点到底是什么")
+chapter("3.1.2 回调函数")
+
 var text = "Demo arigato";
 report("Before defining functions");
 
@@ -26,6 +29,9 @@ values.sort(function(value1, value2){
 });
 report("Sorted Array: " + values);
 
+chapter("3.2 函数作为对象的乐趣")
+chapter("3.2.1 存储函数")
+
 /* function storage */
 
 var store = {
@@ -44,6 +50,8 @@ function ninjia() {}
     
 assert(store.add(ninjia), "function was safely added.");
 assert(store.add(ninjia), "but it was only added once.");
+
+chapter("3.2.2 自记忆函数")
 
 function isPrime(value){
     if (!isPrime.answers){
@@ -69,6 +77,9 @@ function isPrime(value){
 assert(isPrime(5), "5 is prime!");
 assert(isPrime.answers[5], "the answer was cached!");
 
+chapter("3.3 函数定义")
+chapter("3.3.2 箭头函数")
+
 var greet = name => "Greeting " + name;
 assert(greet("Oishi") === "Greeting Oishi", "Oishi is properly greeted");
 
@@ -77,6 +88,9 @@ var anotherGreet = function(name){
 };
 assert(anotherGreet("Oishi") === "Greeting Oishi", "Again, Oishi is properly greeted");
 
+chapter("3.4 函数实参和形参")
+chapter("3.4.1 剩余参数")
+
 function multiMax(first, ...remainingNumbers){
     var sorted = remainingNumbers.sort((a, b) => {
         return b - a;
@@ -84,6 +98,8 @@ function multiMax(first, ...remainingNumbers){
     return first * sorted[0];
 }
 assert(multiMax(3, 1, 2, 3, 4) == 12, "3 * 4 = 12 (First arg, by largest.)");
+
+chapter("3.4.2 默认参数")
 
 function performAction(ninjia, action = "skulking"){
     return ninjia + " " + action;
