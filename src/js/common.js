@@ -8,3 +8,11 @@ function assert(value, desc){
 function report(desc){
     assert(true, desc);
 }
+
+function chapter(title){
+    title = "------" + title + "------";
+    var li = document.createElement("li");
+    li.className = "chapter";
+    li.appendChild(document.createTextNode(title));
+    document.getElementById("debug-ui").appendChild(li);
+}
