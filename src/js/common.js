@@ -16,3 +16,11 @@ function chapter(title){
     li.appendChild(document.createTextNode(title));
     document.getElementById("debug-ui").appendChild(li);
 }
+
+function pass(desc){
+    report(desc);
+}
+
+function fail(desc){
+    assert(false, desc);
+}
